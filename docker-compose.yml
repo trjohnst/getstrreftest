@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  server:
+    hostname: nwserver
+    image: beamdog/nwserver:8193.9
+    volumes:
+      - ./modules:/nwn/home/modules
+    env_file:
+      - ./server.env
+    ports:
+      - "127.0.0.1:5121:5121/udp"
+    stdin_open: true
+    tty: true
+    network_mode: "host"
+    restart: unless-stopped
+
