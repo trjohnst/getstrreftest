@@ -7,6 +7,8 @@ services:
       - ./modules:/nwn/home/modules
     env_file:
       - ./server.env
+    environment:
+      - NWN_MODULE=getstrref8193-9
     ports:
       - "127.0.0.1:5121:5121/udp"
     stdin_open: true
